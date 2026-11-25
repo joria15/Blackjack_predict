@@ -52,16 +52,12 @@ def player_test_result(player_clf, X_test, y_test):
 
 
 #save the model and data (comment out after the first use)
-# player_clf, X_test, y_test = player_train_test_data()
-# joblib.dump(player_clf, "blackjack_tree.joblib") #save model
-# joblib.dump((X_test, y_test), "blackjack_test_data.joblib") #save test_data
-# print("save was successful!")
+player_clf, X_test, y_test = player_train_test_data()
+joblib.dump(player_clf, "blackjack_tree.joblib") #save model
+joblib.dump((X_test, y_test), "blackjack_test_data.joblib") #save test_data
+print("save was successful!")
 
 #test the model and data (uncomment out after the first use)
-player_clf = joblib.load("blackjack_tree.joblib") #load model
-X_test, y_test = joblib.load("blackjack_test_data.joblib") #load test data
-player_test_result(player_clf, X_test, y_test)
-
-print(player_clf.predict([[9, 5, 0, 0, 0]]))
-
-
+# player_clf = joblib.load("blackjack_tree.joblib") #load model
+# X_test, y_test = joblib.load("blackjack_test_data.joblib") #load test data
+# player_test_result(player_clf, X_test, y_test)
